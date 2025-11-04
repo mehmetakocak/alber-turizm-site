@@ -28,42 +28,6 @@
         }
     }
 
-    // ===Quantity Btn===
-    $(".add").on("click", function () {
-        if ($(this).prev().val() < 999) {
-            $(this)
-                .prev()
-                .val(+$(this).prev().val() + 1);
-        }
-    });
-    $(".sub").on("click", function () {
-        if ($(this).next().val() > 1) {
-            if ($(this).next().val() > 1)
-                $(this)
-                .next()
-                .val(+$(this).next().val() - 1);
-        }
-    });
-
-    // ===Checkout Payment===
-    if ($(".checkout__payment__title").length) {
-        $(".checkout__payment__item").find(".checkout__payment__content").hide();
-        $(".checkout__payment__item--active").find(".checkout__payment__content").show();
-
-        $(".checkout__payment__title").on("click", function (e) {
-            e.preventDefault();
-
-            $(this)
-                .parents(".checkout__payment")
-                .find(".checkout__payment__item")
-                .removeClass("checkout__payment__item--active");
-            $(this).parents(".checkout__payment").find(".checkout__payment__content").slideUp();
-
-            $(this).parent().addClass("checkout__payment__item--active");
-            $(this).parent().find(".checkout__payment__content").slideDown();
-        });
-    }
-
     //Image Reveal Animation
     if ($(".reveal").length) {
         gsap.registerPlugin(ScrollTrigger);
@@ -159,73 +123,6 @@
         });
     }
 
-    //Testimonial One Carousel
-    if ($(".testimonial-one__carousel").length) {
-        $(".testimonial-one__carousel").owlCarousel({
-            loop: true,
-            margin: 0,
-            nav: false,
-            dots: false,
-            smartSpeed: 500,
-            autoplay: true,
-            autoplayTimeout: 7000,
-            navText: [
-                '<span class="icon-left-arrow"></span>',
-                '<span class="icon-right-arrow"></span>',
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                768: {
-                    items: 1,
-                },
-                992: {
-                    items: 1,
-                },
-                1200: {
-                    items: 1,
-                },
-                1320: {
-                    items: 1,
-                },
-            },
-        });
-    }
-
-    //Team One Carousel
-    if ($(".team-one__carousel").length) {
-        $(".team-one__carousel").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            dots: true,
-            smartSpeed: 500,
-            autoplay: true,
-            autoplayTimeout: 7000,
-            navText: [
-                '<span class="icon-left-arrow"></span>',
-                '<span class="icon-right-arrow"></span>',
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                },
-                768: {
-                    items: 2,
-                },
-                992: {
-                    items: 2,
-                },
-                1200: {
-                    items: 3,
-                },
-                1320: {
-                    items: 3,
-                },
-            },
-        });
-    }
 
     //Service One Carousel
     if ($(".service-one__carousel").length) {
